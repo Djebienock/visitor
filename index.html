@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fès CAN 2025 Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="importmap">
+
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-mosque"></i> Fès Tourisme
+            </div>
+            <nav>
+                <a href="#home" class="nav-link active">Accueil</a>
+                <a href="#accommodations" class="nav-link">Hébergements</a>
+                <a href="#transport" class="nav-link">Transports</a>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="page active">
+            <!-- Hero Slider -->
+            <div class="hero-slider">
+                <div class="slider-inner">
+                    <!-- Slides will be injected by JS -->
+                </div>
+                <div class="hero-content">
+                    <h1>Découvrez Fès</h1>
+                    <p>Capitale Spirituelle et Culturelle du Maroc</p>
+                    <button class="cta-button">Explorer Maintenant</button>
+                </div>
+            </div>
+            <!-- CAN Presentation -->
+            <div class="content-section bg-white">
+                <div class="container grid-2">
+                    <div>
+                        <h2>CAN 2025 au Maroc</h2>
+                        <p>Le Maroc est fier d'accueillir la Coupe d'Afrique des Nations 2025. Fès, avec sa riche histoire et sa culture vibrante, est l'une des villes hôtes clés, prête à offrir une expérience inoubliable aux fans de football du monde entier.</p>
+                        <p>Préparez-vous à vivre des moments de passion sportive dans des stades modernes et à découvrir l'hospitalité marocaine légendaire.</p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/600/400?random=7" alt="CAN 2025" class="rounded-image">
+                    </div>
+                </div>
+            </div>
+            <!-- Attractions -->
+            <div class="content-section">
+                 <div class="container">
+                    <h2 class="text-center">Attractions Touristiques de Fès</h2>
+                    <div id="attractions-grid" class="grid-3">
+                        <!-- Attraction cards will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="accommodations" class="page hidden">
+            <div class="container content-section">
+                <h1 class="text-center">Trouver votre Hébergement</h1>
+                <p class="text-center subtitle">Comparez et réservez le séjour parfait à Fès.</p>
+                <!-- Filters -->
+                <div class="filters-card grid-3">
+                    <div>
+                        <label for="type-filter">Type d'hébergement</label>
+                        <select id="type-filter">
+                            <option value="all">Tous</option>
+                            <option value="Hôtel">Hôtel</option>
+                            <option value="Riad">Riad</option>
+                            <option value="Auberge">Auberge</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sort-order">Trier par</label>
+                        <select id="sort-order">
+                            <option value="price_asc">Prix (croissant)</option>
+                            <option value="price_desc">Prix (décroissant)</option>
+                            <option value="rating">Note (meilleure)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="price-range">Prix max: <span id="price-value">3000</span> DH</label>
+                        <input id="price-range" type="range" min="300" max="3000" step="100" value="3000">
+                    </div>
+                </div>
+                <!-- Accommodations Grid -->
+                <div id="accommodations-grid" class="grid-4">
+                    <!-- Accommodation cards will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="transport" class="page hidden">
+            <div class="container content-section">
+                <h1 class="text-center">Se Déplacer à Fès</h1>
+                <p class="text-center subtitle">Explorez les options de transport pour un séjour fluide.</p>
+                <div class="grid-2">
+                    <div id="transport-options" class="transport-options-list">
+                        <!-- Transport options will be injected by JS -->
+                    </div>
+                    <div class="map-container">
+                        <h3>Plan de la Ville</h3>
+                        <div class="map-placeholder">
+                           <img src="https://picsum.photos/800/600?grayscale&random=20" alt="Map of Fes">
+                           <div class="map-overlay">
+                               <h4>Intégration de la carte à venir</h4>
+                               <p>Consultez les itinéraires en temps réel</p>
+                           </div>
+                        </div>
+                        <button class="button-full">Ouvrir la carte interactive</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fès Tourisme. Tous droits réservés.</p>
+            <p class="footer-subtitle">Votre guide pour la CAN 2025 à Fès, Maroc.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
