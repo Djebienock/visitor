@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'https://picsum.photos/1920/1080?random=3',
         ],
         attractions: [
-            { name: 'Médina de Fès', description: 'La plus ancienne médina du monde, classée UNESCO.', image: 'https://picsum.photos/400/300?random=4' },
+            { name: 'Médina de Fès', description: 'La plus ancienne médina du monde, classée UNESCO.', image: 'https://i.pinimg.com/1200x/49/13/05/4913059a115dab4f42aae043dbf22f05.jpg' },
             { name: 'Tanneries Chouara', description: 'Tanneries traditionnelles datant du XIe siècle.', image: 'https://picsum.photos/400/300?random=5' },
             { name: 'Université Al Quaraouiyine', description: 'Plus ancienne université du monde en activité.', image: 'https://picsum.photos/400/300?random=6' },
         ],
