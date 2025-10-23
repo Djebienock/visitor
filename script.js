@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- DATABASE (Client-Side) --- //
     const db = {
         sliderImages: [
-            'https://picsum.photos/1920/1080?random=1',
+            'https://i.pinimg.com/1200x/49/13/05/4913059a115dab4f42aae043dbf22f05.jpg',
             'https://picsum.photos/1920/1080?random=2',
             'https://picsum.photos/1920/1080?random=3',
         ],
