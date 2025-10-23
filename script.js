@@ -4,23 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const db = {
         sliderImages: [
             'https://i.pinimg.com/1200x/49/13/05/4913059a115dab4f42aae043dbf22f05.jpg',
-            'https://picsum.photos/1920/1080?random=2',
-            'https://picsum.photos/1920/1080?random=3',
+            'images/slider-2.jpg',
+            'images/slider-3.jpg',
         ],
         attractions: [
-            { name: 'Médina de Fès', description: 'La plus ancienne médina du monde, classée UNESCO.', image: 'https://i.pinimg.com/1200x/49/13/05/4913059a115dab4f42aae043dbf22f05.jpg' },
-            { name: 'Tanneries Chouara', description: 'Tanneries traditionnelles datant du XIe siècle.', image: 'https://picsum.photos/400/300?random=5' },
-            { name: 'Université Al Quaraouiyine', description: 'Plus ancienne université du monde en activité.', image: 'https://picsum.photos/400/300?random=6' },
+            { name: 'Médina de Fès', description: 'La plus ancienne médina du monde, classée UNESCO.', image: 'images/attraction-medina.jpg' },
+            { name: 'Tanneries Chouara', description: 'Tanneries traditionnelles datant du XIe siècle.', image: 'images/attraction-tanneries.jpg' },
+            { name: 'Université Al Quaraouiyine', description: 'Plus ancienne université du monde en activité.', image: 'images/attraction-university.jpg' },
         ],
         accommodations: [
-            { id: 1, name: 'Riad Fès - Relais & Châteaux', type: 'Riad', price: 2500, rating: 5, image: 'https://picsum.photos/400/300?random=10' },
-            { id: 2, name: 'Hôtel Sahrai', type: 'Hôtel', price: 3000, rating: 5, image: 'https://picsum.photos/400/300?random=11' },
-            { id: 3, name: 'Funky Fes Hostel', type: 'Auberge', price: 300, rating: 4, image: 'https://picsum.photos/400/300?random=12' },
-            { id: 4, name: 'Palais Amani', type: 'Riad', price: 2200, rating: 4.5, image: 'https://picsum.photos/400/300?random=13' },
-            { id: 5, name: 'Fes Marriott Hotel Jnan Palace', type: 'Hôtel', price: 1800, rating: 4, image: 'https://picsum.photos/400/300?random=14' },
-            { id: 6, name: 'Riad Braya', type: 'Riad', price: 1500, rating: 4.5, image: 'https://picsum.photos/400/300?random=15' },
-            { id: 7, name: 'Dar El Mandar', type: 'Auberge', price: 450, rating: 3.5, image: 'https://picsum.photos/400/300?random=16' },
-            { id: 8, name: 'Hotel & Spa Dar Bensouda', type: 'Hôtel', price: 1900, rating: 4, image: 'https://picsum.photos/400/300?random=17' },
+            { id: 1, name: 'Riad Fès - Relais & Châteaux', type: 'Riad', price: 2500, rating: 5, image: 'images/accom-1.jpg' },
+            { id: 2, name: 'Hôtel Sahrai', type: 'Hôtel', price: 3000, rating: 5, image: 'images/accom-2.jpg' },
+            { id: 3, name: 'Funky Fes Hostel', type: 'Auberge', price: 300, rating: 4, image: 'images/accom-3.jpg' },
+            { id: 4, name: 'Palais Amani', type: 'Riad', price: 2200, rating: 4.5, image: 'images/accom-4.jpg' },
+            { id: 5, name: 'Fes Marriott Hotel Jnan Palace', type: 'Hôtel', price: 1800, rating: 4, image: 'images/accom-5.jpg' },
+            { id: 6, name: 'Riad Braya', type: 'Riad', price: 1500, rating: 4.5, image: 'images/accom-6.jpg' },
+            { id: 7, name: 'Dar El Mandar', type: 'Auberge', price: 450, rating: 3.5, image: 'images/accom-7.jpg' },
+            { id: 8, name: 'Hotel & Spa Dar Bensouda', type: 'Hôtel', price: 1900, rating: 4, image: 'images/accom-8.jpg' },
         ],
         transportOptions: [
             { id: 1, type: 'Bus de Ville', description: 'Le moyen le plus économique pour se déplacer dans la ville et atteindre les principaux sites.', fare: 'À partir de 4 DH', icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-9-8.494h18m-18 5h18M5 12.753h14M5 12.753V6.253a2 2 0 012-2h10a2 2 0 012 2v6.5m-14 0v4.5a2 2 0 002 2h10a2 2 0 002-2v-4.5" /></svg>` },
@@ -68,22 +68,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- RENDER FUNCTIONS --- //
     const renderHomePage = () => {
         // Slider
-        DOMElements.sliderInner.innerHTML = db.sliderImages.map((src, index) =>
-            `<div class="slide ${index === 0 ? 'active' : ''}" style="background-image: url('${src}')"></div>`
-        ).join('');
+        if (DOMElements.sliderInner) {
+            DOMElements.sliderInner.innerHTML = db.sliderImages.map((src, index) =>
+                `<div class="slide ${index === 0 ? 'active' : ''}" style="background-image: url('${src}')"></div>`
+            ).join('');
+        }
         // Attractions
-        DOMElements.attractionsGrid.innerHTML = db.attractions.map(attraction => `
-            <div class="attraction-card">
-                <img src="${attraction.image}" alt="${attraction.name}">
-                <div class="card-content">
-                    <h3>${attraction.name}</h3>
-                    <p>${attraction.description}</p>
+        if (DOMElements.attractionsGrid) {
+            DOMElements.attractionsGrid.innerHTML = db.attractions.map(attraction => `
+                <div class="attraction-card">
+                    <img src="${attraction.image}" alt="${attraction.name}">
+                    <div class="card-content">
+                        <h3>${attraction.name}</h3>
+                        <p>${attraction.description}</p>
+                    </div>
                 </div>
-            </div>
-        `).join('');
+            `).join('');
+        }
     };
     
     const renderAccommodations = () => {
+        if (!DOMElements.accommodationsGrid) return;
+
         const { filterType, sortOrder, priceRange } = state.accommodations;
         
         const filtered = db.accommodations
@@ -118,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const renderTransportPage = () => {
+        if (!DOMElements.transportOptionsContainer) return;
         DOMElements.transportOptionsContainer.innerHTML = db.transportOptions.map(option => `
             <div class="transport-option">
                 <div class="transport-icon-wrapper">${option.icon}</div>
@@ -133,8 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- NAVIGATION --- //
     const navigateTo = (pageId) => {
         state.currentPage = pageId;
-        DOMElements.pages.forEach(p => p.classList.add('hidden'));
-        document.getElementById(pageId).classList.remove('hidden');
+        DOMElements.pages.forEach(p => {
+            p.classList.add('hidden');
+            p.classList.remove('active');
+        });
+        
+        const targetPage = document.getElementById(pageId);
+        if(targetPage) {
+            targetPage.classList.remove('hidden');
+            targetPage.classList.add('active');
+        }
 
         DOMElements.navLinks.forEach(link => {
             link.classList.toggle('active', link.hash === `#${pageId}`);
@@ -145,15 +160,18 @@ document.addEventListener('DOMContentLoaded', () => {
     DOMElements.navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const pageId = e.target.hash.substring(1);
+            const pageId = e.currentTarget.hash.substring(1);
             navigateTo(pageId);
         });
     });
 
     // --- SLIDER LOGIC --- //
     const startSlider = () => {
+        if (!DOMElements.sliderInner) return;
+        
         state.slider.interval = setInterval(() => {
             const slides = document.querySelectorAll('.slide');
+            if (slides.length === 0) return;
             slides[state.slider.currentSlide].classList.remove('active');
             state.slider.currentSlide = (state.slider.currentSlide + 1) % slides.length;
             slides[state.slider.currentSlide].classList.add('active');
@@ -161,21 +179,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- EVENT LISTENERS --- //
-    DOMElements.typeFilter.addEventListener('change', (e) => {
-        state.accommodations.filterType = e.target.value;
-        renderAccommodations();
-    });
+    if(DOMElements.typeFilter) {
+        DOMElements.typeFilter.addEventListener('change', (e) => {
+            state.accommodations.filterType = e.target.value;
+            renderAccommodations();
+        });
+    }
 
-    DOMElements.sortOrder.addEventListener('change', (e) => {
-        state.accommodations.sortOrder = e.target.value;
-        renderAccommodations();
-    });
+    if(DOMElements.sortOrder) {
+        DOMElements.sortOrder.addEventListener('change', (e) => {
+            state.accommodations.sortOrder = e.target.value;
+            renderAccommodations();
+        });
+    }
     
-    DOMElements.priceRange.addEventListener('input', (e) => {
-        state.accommodations.priceRange = Number(e.target.value);
-        DOMElements.priceValue.textContent = e.target.value;
-        renderAccommodations();
-    });
+    if(DOMElements.priceRange) {
+        DOMElements.priceRange.addEventListener('input', (e) => {
+            state.accommodations.priceRange = Number(e.target.value);
+            DOMElements.priceValue.textContent = e.target.value;
+            renderAccommodations();
+        });
+    }
 
 
     // --- INITIALIZATION --- //
